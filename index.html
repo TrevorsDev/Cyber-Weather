@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Waffles</title>
+</head>
+<!--Body to hold all of our visible content-->
+<body>
+    <!--Welcome header and styling bar, minding semantics w/header-->
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
+    <!--Creating a navigation with two separate containers. One for text area and submit button, another for cities that will populate as buttons below-->
+    <nav>
+        <div id="search-bar">
+            <h2>Search for a City:</h2>
+            <input type="text" placeholder="Type city here">
+            <input type="submit" value="Submit">
+        </div>
+
+        <!--cities will populate in this section-->
+        <section id="generated-cities">
+            <button></button>
+        </section>
+    </nav>
+
+
+    <!--This is a rectangle section which will display live weather criteria-->
+    <section id="current-weather">
+        <h2>Placeholder City Name</h2>
+        <p>Temp:</p>
+        <p>Wind:</p>
+        <p>Humidity:</p>
+    </section>
+
+    <!--In this section, five boxes will populate showing a forcast for each day-->
+    <section id="5-day-forcast">
+        <h3></h3>
+    </section>
+
+</body>
+
+</html>
