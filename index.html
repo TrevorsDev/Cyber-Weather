@@ -4,41 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Waffles</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
 </head>
 <!--Body to hold all of our visible content-->
+
 <body>
     <!--Welcome header and styling bar, minding semantics w/header-->
     <header>
         <h1>Weather Dashboard</h1>
     </header>
     <!--Creating a navigation with two separate containers. One for text area and submit button, another for cities that will populate as buttons below-->
-    <nav>
-        <div id="search-bar">
-            <h2>Search for a City:</h2>
-            <input type="text" placeholder="Type city here">
-            <input type="submit" value="Submit">
-        </div>
+    <section class="big-wrap">
+        <nav>
+            <div id="search">
+                <h2>Search for a City:</h2>
+                <input id="search-box" type="text" placeholder="Type city here">
+                <input id="submit-button" type="submit" value="Submit">
+            </div>
 
-        <!--cities will populate in this section-->
-        <section id="generated-cities">
-            <button></button>
+            <!--cities will populate in this section appearing as buttons-->
+            <section id="generated-cities">
+                <button>Atlanta</button>
+            </section>
+
+            <!--This is a rectangle section which will display live weather criteria-->
+
+        </nav>
+
+        <section id="current-rapper">
+            <section id="current-weather">
+                <h2 class="emoji-container">Placeholder City Name</h2>
+                <p>Temp:</p>
+                <p>Wind:</p>
+                <p>Humidity:</p>
+            </section>
+
+
+            <!--In this section, five boxes will populate showing a forcast for each day-->
+            <section id="five-day-forcast">
+                <h3>5-Day Forecast</h3>
+                <section id="display-boxes">
+                    <div class="future-cast">
+                        <h4>9/14/2022</h4>
+                        <div class="emoji-container"></div>
+                        <p>Temp:</p>
+                        <p>Wind:</p>
+                        <p>Humidity:</p>
+                    </div>
+                    <div class="future-cast">
+                        <h4>9/15/2022</h4>
+                        <div class="emoji-container"></div>
+                        <p>Temp:</p>
+                        <p>Wind:</p>
+                        <p>Humidity:</p>
+                    </div>
+                    <div class="future-cast">
+                        <h4>9/16/2022</h4>
+                        <div class="emoji-container"></div>
+                        <p>Temp:</p>
+                        <p>Wind:</p>
+                        <p>Humidity:</p>
+                    </div>
+                    <div class="future-cast">
+                        <h4>9/17/2022</h4>
+                        <div class="emoji-container"></div>
+                        <p>Temp:</p>
+                        <p>Wind:</p>
+                        <p>Humidity:</p>
+                    </div>
+                    <div class="future-cast">
+                        <h4>9/18/2022</h4>
+                        <div class="emoji-container"></div>
+                        <p>Temp:</p>
+                        <p>Wind:</p>
+                        <p>Humidity:</p>
+                    </div>
+                </section>
+            </section>
         </section>
-    </nav>
-
-
-    <!--This is a rectangle section which will display live weather criteria-->
-    <section id="current-weather">
-        <h2>Placeholder City Name</h2>
-        <p>Temp:</p>
-        <p>Wind:</p>
-        <p>Humidity:</p>
     </section>
-
-    <!--In this section, five boxes will populate showing a forcast for each day-->
-    <section id="5-day-forcast">
-        <h3></h3>
-    </section>
-
 </body>
 
 </html>

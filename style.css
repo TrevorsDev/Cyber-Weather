@@ -1,0 +1,111 @@
+* {
+
+}
+
+header {
+  background-color: rgb(2, 2, 125);
+  color: white;
+  padding: .5px;
+  border-radius: 5px
+}
+
+body {
+  background-color: lightblue;
+}
+
+.emoji-container::after {
+  content: "☀️";
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+
+}
+
+.big-wrap {
+  display: flex;
+  flex-direction: row;
+
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  
+}
+
+#search {
+  display: flex;
+  flex-direction: column;
+}
+
+#search-box {
+  border-radius: 5px;
+}
+
+#submit-button {
+  padding: 5% 0;
+  margin: 5% 0 5% 0;
+  border-radius: 5px;
+}
+
+#generated-cities {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  max-width: 100%;
+  border-top: 2px solid gray;
+  padding-top: 5%;
+}
+#current-rapper {
+  display: flex;
+  flex-direction: column;
+  width: 65%;
+  margin: 3%;
+}
+
+#current-weather {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 2px solid black;
+  padding-left: 3%;
+}
+
+#five-day-forcast {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /*align-items: flex-start;*/
+}
+
+#display-boxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.future-cast {
+  border: 2px solid black;
+  padding: 1%;
+  margin: 2%
+}
+
+
+
+@media only screen and (max-width: 550px) {
+  body {
+    background-color: pink;
+  }
+
+  .big-wrap {
+    flex-direction: column;
+  }
+
+  #display-boxes {
+    flex-direction: column;
+  }
+}
