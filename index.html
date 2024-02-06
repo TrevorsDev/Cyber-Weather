@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Waffles</title>
     <link rel="stylesheet" type="text/css" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
+
 </head>
 <!--Body to hold all of our visible content-->
 
@@ -17,14 +21,14 @@
     <section class="big-wrap">
         <nav>
             <div id="search">
-                <h2>Search for a City:</h2>
+                <h2>Search for a City<span>:</span></h2>
                 <input id="search-box" type="text" placeholder="Type city here">
-                <input id="submit-button" type="submit" value="Submit">
+                <input id="submit-button" type="button" value="Submit">
             </div>
 
             <!--cities will populate in this section appearing as buttons-->
             <section id="generated-cities">
-                <button>Atlanta</button>
+                <button class="saved-cities">Atlanta</button>
             </section>
 
             <!--This is a rectangle section which will display live weather criteria-->
@@ -33,10 +37,10 @@
 
         <section id="current-rapper">
             <section id="current-weather">
-                <h2 class="emoji-container">Placeholder City Name</h2>
-                <p>Temp:</p>
-                <p>Wind:</p>
-                <p>Humidity:</p>
+                <h2 class="emoji-container">Santa Cruz, CA.</h2>
+                <p>Temp:<span> 80 degrees</span></p>
+                <p>Wind༄ <span> 60 knots</span></p>
+                <p>Humidity:<span> 🕱</span></p>
             </section>
 
 
@@ -47,42 +51,44 @@
                     <div class="future-cast">
                         <h4>9/14/2022</h4>
                         <div class="emoji-container"></div>
-                        <p>Temp:</p>
-                        <p>Wind:</p>
-                        <p>Humidity:</p>
+                        <p>Temp:<span> 80 degrees</span></p>
+                        <p>Wind༄<span> 60 knots</span></p>
+                        <p>Humidity:<span> 🕱</span></p>
                     </div>
                     <div class="future-cast">
                         <h4>9/15/2022</h4>
                         <div class="emoji-container"></div>
-                        <p>Temp:</p>
-                        <p>Wind:</p>
-                        <p>Humidity:</p>
+                        <p>Temp:<span> 80 degrees</span></p>
+                        <p>Wind༄<span> 60 knots</span></p>
+                        <p>Humidity:<span> 🕱</span></p>
                     </div>
                     <div class="future-cast">
                         <h4>9/16/2022</h4>
                         <div class="emoji-container"></div>
-                        <p>Temp:</p>
-                        <p>Wind:</p>
-                        <p>Humidity:</p>
+                        <p>Temp:<span> 80 degrees</span></p>
+                        <p>Wind༄<span> 60 knots</span></p>
+                        <p>Humidity:<span> 🕱</span></p>
                     </div>
                     <div class="future-cast">
                         <h4>9/17/2022</h4>
                         <div class="emoji-container"></div>
-                        <p>Temp:</p>
-                        <p>Wind:</p>
-                        <p>Humidity:</p>
+                        <p>Temp:<span> 80 degrees</span></p>
+                        <p>Wind༄<span> 60 knots</span></p>
+                        <p>Humidity:<span> 🕱</span></p>
                     </div>
                     <div class="future-cast">
                         <h4>9/18/2022</h4>
                         <div class="emoji-container"></div>
-                        <p>Temp:</p>
-                        <p>Wind:</p>
-                        <p>Humidity:</p>
+                        <p>Temp:<span> 80 degrees</span></p>
+                        <p>Wind༄<span> 60 knots</span></p>
+                        <p>Humidity:<span> 🕱</span></p>
                     </div>
                 </section>
             </section>
         </section>
     </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./assets/script.js" 
 </body>
 
 </html>
