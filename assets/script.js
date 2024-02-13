@@ -29,15 +29,17 @@ const button = document.getElementById("submit-button");
 const searchBox = document.getElementById("search-box");
 button.addEventListener("click", (event) => {
     console.log(searchBox.value);
+    event.preventDefault();
     getLatAndLong(searchBox.value);
 });
 
-button.addEventListener("keydown", function (event) {
+// added the ability to press the "Enter" key after a city is inputted into the Search box
+searchBox.addEventListener("keydown", function (event) {
     if (event.key == 'Enter') {
-        console.log(searchBox.value);
+        event.preventDefault();
         getLatAndLong(searchBox.value);
         return;
-    } 
+    }
 });
 
 if (searchBox.value) {
@@ -70,15 +72,15 @@ function todayWeather(data) {
 
     var currentTemp = document.createElement("p");
     //this line is gathering data from the api object in the console using the '.name' as a selector
-    currentTemp.textContent = `Temp:    ${data.main.temp} °`;
+    currentTemp.textContent = `Temp :    ${data.main.temp} °`;
 
     var currentWind = document.createElement("p");
     //this line is gathering data from the api object in the console using the '.name' as a selector
-    currentWind.textContent = `Wind༄:    ${data.wind.speed}`;
+    currentWind.textContent = `Wind༄ :    ${data.wind.speed}`;
 
     var currentHumidity = document.createElement("p");
     //this line is gathering data from the api object in the console using the '.name' as a selector
-    currentHumidity.textContent = 'Humidity ♨:' + '   ' + data.main.humidity;
+    currentHumidity.textContent = 'Humidity ♨ :' + '   ' + data.main.humidity;
 
     currentWeather.appendChild(currentCity);
     currentWeather.appendChild(currentTemp);
