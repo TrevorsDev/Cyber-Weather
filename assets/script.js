@@ -19,7 +19,7 @@ function getWeather(lat, lon) {
             return response.json();
         })
         .then(function (data) {
-            console.log("this here b tha data", data);
+            console.log("This here b tha data", data);
             clearSubmition();
             todayWeather(data);
         })
@@ -29,11 +29,27 @@ const button = document.getElementById("submit-button");
 const searchBox = document.getElementById("search-box");
 button.addEventListener("click", (event) => {
     console.log(searchBox.value);
-    getLatAndLong(searchBox.value)
+    getLatAndLong(searchBox.value);
 });
 
+button.addEventListener("keydown", function (event) {
+    if (event.key == 'Enter') {
+        console.log(searchBox.value);
+        getLatAndLong(searchBox.value);
+        return;
+    } 
+});
+
+if (searchBox.value) {
+    console.log(searchBox.value);
+} else {
+    console.log('im not greater than 1');
+}
+
 function getLatAndLong(cityName) {
+    console.log(cityName);
     const cityNameURL = 'https://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&limit=5&appid=38438435bd1e08c9d78e0ac7cd864567'
+    console.log(cityNameURL);
     fetch(cityNameURL)
         .then(function (response) {
             console.log(response);
@@ -62,7 +78,7 @@ function todayWeather(data) {
 
     var currentHumidity = document.createElement("p");
     //this line is gathering data from the api object in the console using the '.name' as a selector
-    currentHumidity.textContent = 'Humidity ♨:'+'   '+data.main.humidity;
+    currentHumidity.textContent = 'Humidity ♨:' + '   ' + data.main.humidity;
 
     currentWeather.appendChild(currentCity);
     currentWeather.appendChild(currentTemp);
