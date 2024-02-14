@@ -41,6 +41,10 @@ h1 {
   color: var(--cp_cyan);
 }
 
+h2, h3 {
+  font-size: 25px;
+}
+
 .big-wrap {
   display: flex;
   flex-direction: row;
@@ -122,9 +126,26 @@ span {
   margin: 3%;
 }
 
+.js-h1 {
+  font-size: 25px;
+}
+
 .cyan-text {
+  /* display: flex;
+  flex-direction: row; */
+  width: 65%;
+  margin: 3%;
   color: var(--cp_cyan);
-  font-size: 19px;
+  font-size: 18px;
+}
+
+.pink-text {
+  /* display: flex;
+  flex-direction: column; */
+  /* width: 65%;
+  margin: 3%; */
+  color: var(--cp_pink);
+  font-size: 14px;
 }
 
 #current-weather {

@@ -20,11 +20,29 @@ function getWeather(lat, lon) {
             return response.json();
         })
         .then(function (data) {
-            console.log("This here b tha data", data);
+            console.log("This here be tha location data", data);
             clearSubmition();
             todayWeather(data);
         })
 }
+
+function getLatAndLong(cityName) {
+    console.log(cityName);
+    const cityNameURL = 'https://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&limit=5&appid=38438435bd1e08c9d78e0ac7cd864567'
+    fetch(cityNameURL)
+        .then(function (response) {
+            console.log(response);
+            return response.json();
+        })
+        .then(function (data) {
+            console.log("This here be the city data", data);
+            const lat = data[0].lat
+            const lon = data[0].lon
+            getWeather(lat, lon);
+            getFiveDayForecast(lat, lon);
+        })
+}
+
 /*creating function to grab five day forecast from an api URL
 returning digestible object information. */
 function getFiveDayForecast(lat, lon) {
@@ -36,7 +54,7 @@ function getFiveDayForecast(lat, lon) {
         })
         // .then points to that json data, the function calls upon that data or information, console.log prints it so we can view it
         .then(function (data) {
-            console.log("This here b tha data", data);
+            console.log("This here b tha 5 day forecast data", data);
             /*We create a new variable called 'days'. We set it equal to a function which gives us the temps of the next five days. We do this by, calling upon the parameter 'data' which is our now neatly compiled JSON list of info, and attach the file path called 'list' which points to the location of the specific data we're looking for. There are 40 indexes within the 'list' location. We use the '.filter' method to filter the list of 40 indexes and return to us only the indexes that '.includes' the next five day forecast at '9:00:00'. */
             const days = data.list.filter((day) => day.dt_txt.includes('09:00:00'));
             /*const days = data.list.filter(function(day) {
@@ -63,50 +81,48 @@ searchBox.addEventListener("keydown", function (event) {
     }
 });
 
-function getLatAndLong(cityName) {
-    console.log(cityName);
-    const cityNameURL = 'https://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&limit=5&appid=38438435bd1e08c9d78e0ac7cd864567'
-    fetch(cityNameURL)
-        .then(function (response) {
-            console.log(response);
-            return response.json();
-        })
-        .then(function (data) {
-            console.log(data);
-            const lat = data[0].lat
-            const lon = data[0].lon
-            getWeather(lat, lon);
-            getFiveDayForecast(lat, lon);
-        })
-}
 var currentWeather = document.querySelector("#current-weather");
 function todayWeather(data) {
     var currentCity = document.createElement("h2");
-    //this line is gathering data from the api object in the console using the '.name' as a selector
-    currentCity.textContent = data.name;
+    //this line is gathering data from the api object thats located in the console, using the '.name' as a selector
+    currentCity.textContent = `${data.name} ☼`;
+    currentCity.setAttribute("class", "js-h1")
 
     // In the lines below, Im both creating innerHTML elements so that the current weather can be displayed, AND styling different elements separate colors
     var currentTemp = document.createElement("p");
     //this line is gathering data from the api object in the console using the '.name' as a selector
-    var currentTimeLabel = document.createElement("span")
-    currentTimeLabel.textContent = `Temp : `;
-    currentTimeLabel.style.color = "#ff2a6d";
+    var currentTempLabel = document.createElement("span");
+    currentTempLabel.textContent = `Temp : `;
+    currentTempLabel.setAttribute("class", "pink-text");
     var currentTempSpan = document.createElement("span");
     currentTempSpan.textContent = `${data.main.temp}  °`;
-    // currentTempSpan.style.color = "#05d9e8";
     currentTempSpan.setAttribute("class", "cyan-text");
-    // var currentTimeDegree = document.createElement("span")
-    // currentTimeDegree.textContent = ` °`;
-    // currentTemp.innerHTML = `Temp:   <span  class="temp-color-style">${data.main.temp}</span> °`
-    currentTemp.append(currentTimeLabel, currentTempSpan)
+    currentTemp.append(currentTempLabel, currentTempSpan);
+
 
     var currentWind = document.createElement("p");
     //this line is gathering data from the api object in the console using the '.name' as a selector
-    currentWind.textContent = `Wind༄ :    ${data.wind.speed} mph`;
+    var currentWindLabel = document.createElement("span");
+    currentWindLabel.textContent = `Wind༄ : `;
+    currentWindLabel.setAttribute("class", "pink-text");
+    // currentWindLabel.style.color = "#ff2a6d";
+    var currentWindSpan = document.createElement("span");
+    currentWindSpan.textContent = `${data.wind.speed} mph`;
+    currentWindSpan.setAttribute("class", "cyan-text");
+    currentWind.append(currentWindLabel, currentWindSpan);
+
 
     var currentHumidity = document.createElement("p");
     //this line is gathering data from the api object in the console using the '.name' as a selector
-    currentHumidity.textContent = 'Humidity ♨ :' + '   ' + data.main.humidity + ' %';
+    var currentHumidityLabel = document.createElement("span");
+    currentHumidityLabel.textContent = `Humidity ♨ :`;
+    currentHumidityLabel.setAttribute("class", "pink-text");
+    var currentHumiditySpan = document.createElement("span");
+    currentHumidity.textContent = `${data.main.humidity} %`;
+    currentHumiditySpan.setAttribute("class", "cyan-text");
+    currentHumidity.append(currentHumidityLabel, currentHumiditySpan);
+
+    // currentHumidity.textContent = 'Humidity ♨ :' + '   ' + data.main.humidity + ' %';
 
     currentWeather.appendChild(currentCity);
     currentWeather.appendChild(currentTemp);
