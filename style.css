@@ -10,16 +10,24 @@
   --cp_cyan: #05d9e8;
 }
 
-header {
+body {
+  /* background-image: url(assets/img/cyber_city.jpg); */
+  /* background-size: contain; */
+  background-size: cover;
   background-color: #000000;
+}
+
+header {
+  background-color: #000000cc;
   color: var(--cp_cyan);
   padding: .5px;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 25px;
 }
 
-body {
-  background-color: rgba(0, 0, 0, 0.941);
+#total-wrapper {
+  background-color: rgba(0, 0, 0, 0.817);
+  /* height: 100vh; */
 }
 
 .emoji-container::after {
@@ -42,7 +50,7 @@ nav {
   display: flex;
   flex-direction: column;
   max-width: 100%;
-  background-color: #000000;
+  background-color: #000000cc;
   padding-left: 10px;
   padding-right: 10px;
   padding: 0 10px 30px 10px;
@@ -112,7 +120,11 @@ span {
   flex-direction: column;
   width: 65%;
   margin: 3%;
+}
 
+.cyan-text {
+  color: var(--cp_cyan);
+  font-size: 19px;
 }
 
 #current-weather {
