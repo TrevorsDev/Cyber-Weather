@@ -64,6 +64,9 @@ function getFiveDayForecast(lat, lon) {
         })
 }
 
+// Building the Five Day Forecast here.
+// 1) I want to connect my five day dates, and weather criteria to my html
+
 const button = document.getElementById("submit-button");
 const searchBox = document.getElementById("search-box");
 button.addEventListener("click", (event) => {
@@ -118,7 +121,7 @@ function todayWeather(data) {
     currentHumidityLabel.textContent = `Humidity ♨ :`;
     currentHumidityLabel.setAttribute("class", "pink-text");
     var currentHumiditySpan = document.createElement("span");
-    currentHumidity.textContent = `${data.main.humidity} %`;
+    currentHumiditySpan.textContent = `${data.main.humidity} %`;
     currentHumiditySpan.setAttribute("class", "cyan-text");
     currentHumidity.append(currentHumidityLabel, currentHumiditySpan);
 
