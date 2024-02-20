@@ -13,7 +13,7 @@
 setparate functions for current weather and five day forecst*/
 // My API key: 38438435bd1e08c9d78e0ac7cd864567
 var futureTemps = document.querySelectorAll(".future-temp");
-var futureWind = document.querySelectorAll("future-wind");
+var futureWind = document.querySelectorAll(".future-wind");
 
 
 
