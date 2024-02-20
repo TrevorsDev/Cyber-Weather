@@ -49,6 +49,11 @@ function getLatAndLong(cityName) {
         })
 }
 
+// Building the Five Day Forecast here.
+// 1) I want to connect my five day dates, and weather criteria to my html
+// 2) I want each date to show up below the five day forecast header in realtime when city is searched
+// 3) I want the weather criteria to show up in realtime below dates when city is searched
+
 /*creating function to grab five day forecast from an api URL
 returning digestible object information. */
 function getFiveDayForecast(lat, lon) {
@@ -88,10 +93,16 @@ function getFiveDayForecast(lat, lon) {
         })
 }
 
-// Building the Five Day Forecast here.
-// 1) I want to connect my five day dates, and weather criteria to my html
-// 2) I want each date to show up below the five day forecast header in realtime when city is searched
-// 3) I want the weather criteria to show up in realtime below dates when city is searched
+// creating a hisotry log of searched cities in nav bar here:
+// 1) As a user, I want to display searched cities in the nav bar below the submit button
+// 2) I need to create elements to populate the area below by using empty section tags and attaching JS buttons to fill when a city is searched
+// 3) I need each new search to iterate through and add buttons to a new section tag
+// 4) When a city is searched, it passes onto the button
+
+const recordButton = documentgetElementById("record-button");
+// I want recordButton to return and display the searchBox city
+recordButton.addEventListener()
+recordButton(searchBox.value);
 
 
 
