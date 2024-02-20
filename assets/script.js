@@ -14,6 +14,7 @@ setparate functions for current weather and five day forecst*/
 // My API key: 38438435bd1e08c9d78e0ac7cd864567
 var futureTemps = document.querySelectorAll(".future-temp");
 var futureWind = document.querySelectorAll(".future-wind");
+var futureHumidity = document.querySelectorAll(".future-humidity");
 
 
 
@@ -70,13 +71,19 @@ function getFiveDayForecast(lat, lon) {
             // the three lines below populate the 5day temps forecast
             for (var i = 0; i < futureTemps.length; i++) {
                 console.log(futureTemps[i]);
-                futureTemps[i].textContent = days[i].main.temp;
+                futureTemps[i].textContent = ` ${days[i].main.temp} °`;
             }
 
             // the three lines below populate the 5day wind forecast
             for (var i = 0; i < futureWind.length; i++) {
                 console.log(futureWind[i]);
-                futureWind[i].textContent = days[i].wind.speed;
+                futureWind[i].textContent = ` ${days[i].wind.speed} mph`;
+            }
+
+            // three lines below populate the 5day humidity
+            for (var i = 0; i < futureHumidity.length; i++) {
+                console.log(futureHumidity[i]);
+                futureHumidity[i].textContent = ` ${days[i].main.humidity} %`;
             }
         })
 }
