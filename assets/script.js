@@ -12,6 +12,11 @@
 
 setparate functions for current weather and five day forecst*/
 // My API key: 38438435bd1e08c9d78e0ac7cd864567
+var futureTemps = document.querySelectorAll(".future-temp");
+var futureWind = document.querySelectorAll("future-wind");
+
+
+
 function getWeather(lat, lon) {
     var weatherURL = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=38438435bd1e08c9d78e0ac7cd864567&units=imperial';
 
@@ -61,6 +66,18 @@ function getFiveDayForecast(lat, lon) {
                 day.dt_txt.includes('9:00:00');
             })*/
             console.log(days);
+
+            // the three lines below populate the 5day temps forecast
+            for (var i = 0; i < futureTemps.length; i++) {
+                console.log(futureTemps[i]);
+                futureTemps[i].textContent = days[i].main.temp;
+            }
+
+            // the three lines below populate the 5day wind forecast
+            for (var i = 0; i < futureWind.length; i++) {
+                console.log(futureWind[i]);
+                futureWind[i].textContent = days[i].wind.speed;
+            }
         })
 }
 
@@ -88,6 +105,8 @@ searchBox.addEventListener("keydown", function (event) {
     }
 });
 
+
+
 var currentWeather = document.querySelector("#current-weather");
 function todayWeather(data) {
     var currentCity = document.createElement("h2");
@@ -112,7 +131,6 @@ function todayWeather(data) {
     var currentWindLabel = document.createElement("span");
     currentWindLabel.textContent = `Wind༄ : `;
     currentWindLabel.setAttribute("class", "pink-text");
-    // currentWindLabel.style.color = "#ff2a6d";
     var currentWindSpan = document.createElement("span");
     currentWindSpan.textContent = `${data.wind.speed} mph`;
     currentWindSpan.setAttribute("class", "cyan-text");
@@ -126,10 +144,9 @@ function todayWeather(data) {
     currentHumidityLabel.setAttribute("class", "pink-text");
     var currentHumiditySpan = document.createElement("span");
     currentHumiditySpan.textContent = `${data.main.humidity} %`;
+    currentHumiditySpan.textContent = `${data.main.humidity} %`;
     currentHumiditySpan.setAttribute("class", "cyan-text");
     currentHumidity.append(currentHumidityLabel, currentHumiditySpan);
-
-    // currentHumidity.textContent = 'Humidity ♨ :' + '   ' + data.main.humidity + ' %';
 
     currentWeather.appendChild(currentCity);
     currentWeather.appendChild(currentTemp);
