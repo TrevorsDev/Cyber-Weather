@@ -81,6 +81,11 @@ function getFiveDayForecast(lat, lon) {
         })
 }
 
+// Building the Five Day Forecast here.
+// 1) I want to connect my five day dates, and weather criteria to my html
+// 2) I want each date to show up below the five day forecast header in realtime when city is searched
+// 3) I want the weather criteria to show up in realtime below dates when city is searched
+
 
 
 const button = document.getElementById("submit-button");
