@@ -139,6 +139,7 @@ function todayWeather(data) {
     currentHumidityLabel.setAttribute("class", "pink-text");
     var currentHumiditySpan = document.createElement("span");
     currentHumiditySpan.textContent = `${data.main.humidity} %`;
+    currentHumiditySpan.textContent = `${data.main.humidity} %`;
     currentHumiditySpan.setAttribute("class", "cyan-text");
     currentHumidity.append(currentHumidityLabel, currentHumiditySpan);
 
