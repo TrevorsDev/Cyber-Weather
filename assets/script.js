@@ -125,10 +125,17 @@ searchBox.addEventListener("keydown", (event) => {
     //Dominick Simone
 });
 
+function buttonGenerator {
+    // if (searchBox.value ==  a city value) {
+        // var savedCityButton = document.createElement("button");
+        // for (var i = 10; i < searchHistory.length; i++ ) {
+        // savedCityButton.textContent = searchHistory[i];
+    }
+}
 
-
-
-
+//Now I need to have a button created each time a search is performed, with the city of the search inside. 
+//Ill need a new function which creates a new button element, when city is searched
+// I search a city, that city is saved into an array in local storage, a button is generated on the click or press of 'Enter', within that button the searchBox.value is saved, a loop is generated so that a certain number of buttons are saved to the navigation bar 
 
 // const button = document.getElementById("submit-button");
 // const searchBox = document.getElementById("search-box");
