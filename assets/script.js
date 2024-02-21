@@ -93,27 +93,6 @@ function getFiveDayForecast(lat, lon) {
         })
 }
 
-// creating a hisotry log of searched cities in nav bar here:
-// 1) As a user, I want to display searched cities in the nav bar below the submit button
-// 2) I need to create elements to populate the area below by using empty section tags and attaching JS buttons to fill when a city is searched
-// 3) I need each new search to iterate through and add buttons to a new section tag
-// 4) When a city is searched, it passes onto the button
-
-const recordButton = documentgetElementById("record-button");
-// I want recordButton to return and display the searchBox city
-recordButton.addEventListener()
-recordButton(searchBox.value);
-
-
-
-const button = document.getElementById("submit-button");
-const searchBox = document.getElementById("search-box");
-button.addEventListener("click", (event) => {
-    console.log(searchBox.value);
-    event.preventDefault();
-    getLatAndLong(searchBox.value);
-});
-
 // added the ability to press the "Enter" key after a city is inputted into the Search box
 searchBox.addEventListener("keydown", function (event) {
     if (event.key == 'Enter') {
@@ -122,8 +101,6 @@ searchBox.addEventListener("keydown", function (event) {
         return;
     }
 });
-
-
 
 var currentWeather = document.querySelector("#current-weather");
 function todayWeather(data) {
