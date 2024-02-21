@@ -75,19 +75,18 @@ function getFiveDayForecast(lat, lon) {
 
             // the three lines below populate the 5day temps forecast
             for (var i = 0; i < futureTemps.length; i++) {
-                console.log(futureTemps[i]);
                 futureTemps[i].textContent = ` ${days[i].main.temp} °`;
             }
 
             // the three lines below populate the 5day wind forecast
             for (var i = 0; i < futureWind.length; i++) {
-                console.log(futureWind[i]);
+
                 futureWind[i].textContent = ` ${days[i].wind.speed} mph`;
             }
 
             // three lines below populate the 5day humidity
             for (var i = 0; i < futureHumidity.length; i++) {
-                console.log(futureHumidity[i]);
+
                 futureHumidity[i].textContent = ` ${days[i].main.humidity} %`;
             }
         })
@@ -116,26 +115,32 @@ button.addEventListener("click", (event) => {
 
 searchBox.addEventListener("keydown", (event) => {
     if (event.key == 'Enter') {
-        searchHistory.push(searchBox.value);
+        if (!searchHistory.includes(searchBox.value)) {
+            searchHistory.push(searchBox.value);
+        }
         localStorage.setItem("searchHistory", JSON.stringify(searchHistory))
         console.log(searchBox.value);
         event.preventDefault();
         getLatAndLon(searchBox.value);
     }
-    //Dominick Simone
 });
 
-function buttonGenerator {
-    // if (searchBox.value ==  a city value) {
-        // var savedCityButton = document.createElement("button");
-        // for (var i = 10; i < searchHistory.length; i++ ) {
-        // savedCityButton.textContent = searchHistory[i];
-    }
-}
+
 
 //Now I need to have a button created each time a search is performed, with the city of the search inside. 
 //Ill need a new function which creates a new button element, when city is searched
 // I search a city, that city is saved into an array in local storage, a button is generated on the click or press of 'Enter', within that button the searchBox.value is saved, a loop is generated so that a certain number of buttons are saved to the navigation bar 
+// Were calling the function twice. Once at the start with no local storage and once upon each city search
+
+function buttonGenerator() {
+
+    for (var i = 0; i < searchHistory.length; i++) {
+        var savedCityButton = document.createElement("button");
+        savedCityButton.textContent = searchHistory[i];
+        recordButton.append(savedCityButton)
+    }
+}
+buttonGenerator();
 
 // const button = document.getElementById("submit-button");
 // const searchBox = document.getElementById("search-box");
