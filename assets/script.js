@@ -32,7 +32,7 @@ function getWeather(lat, lon) {
         })
 }
 
-function getLatAndLong(cityName) {
+function getLatAndLon(cityName) {
     console.log(cityName);
     const cityNameURL = 'https://api.openweathermap.org/geo/1.0/direct?q=' + cityName + '&limit=5&appid=38438435bd1e08c9d78e0ac7cd864567'
     fetch(cityNameURL)
@@ -98,27 +98,51 @@ function getFiveDayForecast(lat, lon) {
 // 2) I need to create elements to populate the area below by using empty section tags and attaching JS buttons to fill when a city is searched
 // 3) I need each new search to iterate through and add buttons to a new section tag
 // 4) When a city is searched, it passes onto the button
+// 5) Have a varriable that stores the searched cities inside of an array
 
-const recordButton = documentgetElementById("record-button");
-// I want recordButton to return and display the searchBox city
-recordButton.addEventListener()
-recordButton(searchBox.value);
+const recordButton = document.getElementById("generated-cities");
+//  I want recordButton to return and display the searchBox city
 
-
-
+var searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
 const button = document.getElementById("submit-button");
 const searchBox = document.getElementById("search-box");
 button.addEventListener("click", (event) => {
+    searchHistory.push(searchBox.value);
+    localStorage.setItem("searchHistory", JSON.stringify(searchHistory))
     console.log(searchBox.value);
     event.preventDefault();
-    getLatAndLong(searchBox.value);
+    getLatAndLon(searchBox.value);
+});
+
+searchBox.addEventListener("keydown", (event) => {
+    if (event.key == 'Enter') {
+        searchHistory.push(searchBox.value);
+        localStorage.setItem("searchHistory", JSON.stringify(searchHistory))
+        console.log(searchBox.value);
+        event.preventDefault();
+        getLatAndLon(searchBox.value);
+    }
+    //Dominick Simone
+});
+
+
+
+
+
+
+// const button = document.getElementById("submit-button");
+// const searchBox = document.getElementById("search-box");
+button.addEventListener("click", (event) => {
+    console.log(searchBox.value);
+    event.preventDefault();
+    getLatAndLon(searchBox.value);
 });
 
 // added the ability to press the "Enter" key after a city is inputted into the Search box
 searchBox.addEventListener("keydown", function (event) {
     if (event.key == 'Enter') {
         event.preventDefault();
-        getLatAndLong(searchBox.value);
+        getLatAndLon(searchBox.value);
         return;
     }
 });
