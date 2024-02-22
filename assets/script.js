@@ -106,11 +106,14 @@ var searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
 const button = document.getElementById("submit-button");
 const searchBox = document.getElementById("search-box");
 button.addEventListener("click", (event) => {
-    searchHistory.push(searchBox.value);
+    if (!searchHistory.includes(searchBox.value)) {
+        searchHistory.push(searchBox.value);
+    }
     localStorage.setItem("searchHistory", JSON.stringify(searchHistory))
     console.log(searchBox.value);
     event.preventDefault();
     getLatAndLon(searchBox.value);
+    buttonGenerator();
 });
 
 searchBox.addEventListener("keydown", (event) => {
@@ -122,10 +125,9 @@ searchBox.addEventListener("keydown", (event) => {
         console.log(searchBox.value);
         event.preventDefault();
         getLatAndLon(searchBox.value);
+        buttonGenerator();
     }
 });
-
-
 
 //Now I need to have a button created each time a search is performed, with the city of the search inside. 
 //Ill need a new function which creates a new button element, when city is searched
@@ -133,14 +135,24 @@ searchBox.addEventListener("keydown", (event) => {
 // Were calling the function twice. Once at the start with no local storage and once upon each city search
 
 function buttonGenerator() {
-
+    recordButton.innerHTML = '';
     for (var i = 0; i < searchHistory.length; i++) {
         var savedCityButton = document.createElement("button");
         savedCityButton.textContent = searchHistory[i];
+        savedCityButton.classList.add('savedCityButton')
+        savedCityButton.addEventListener('click', (event) => {
+            getLatAndLon(event.target.textContent);
+        });
         recordButton.append(savedCityButton)
+        if (i === 10) {
+            break;
+        }
     }
 }
+
 buttonGenerator();
+
+
 
 // const button = document.getElementById("submit-button");
 // const searchBox = document.getElementById("search-box");

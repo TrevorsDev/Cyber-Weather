@@ -106,6 +106,15 @@ span {
   color: var(--cp_pink);
 }
 
+.savedCityButton {
+  padding: 5% 0;
+  margin: 5% 0 5% 0;
+  border-radius: 5px;
+  background-color: var(--cp_cyan);
+  opacity: 0.4;
+  color: var(--cp_pink);
+}
+
 #generated-cities {
   display: flex;
   flex-direction: column;
