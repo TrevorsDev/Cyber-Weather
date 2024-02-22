@@ -16,8 +16,6 @@ var futureTemps = document.querySelectorAll(".future-temp");
 var futureWind = document.querySelectorAll(".future-wind");
 var futureHumidity = document.querySelectorAll(".future-humidity");
 
-
-
 function getWeather(lat, lon) {
     var weatherURL = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=38438435bd1e08c9d78e0ac7cd864567&units=imperial';
 
@@ -144,15 +142,13 @@ function buttonGenerator() {
             getLatAndLon(event.target.textContent);
         });
         recordButton.append(savedCityButton)
-        if (i === 10) {
+        if (i === 6) {
             break;
         }
     }
 }
 
 buttonGenerator();
-
-
 
 // const button = document.getElementById("submit-button");
 // const searchBox = document.getElementById("search-box");
