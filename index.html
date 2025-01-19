@@ -1,99 +1,98 @@
- <html lang="en">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Waffles</title>
-    <link rel="stylesheet" type="text/css" href="./style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Waffles</title>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
 
 </head>
 <!--Body to hold all of our visible content-->
 
 <body>
-    <section id="total-wrapper">
+  <section id="total-wrapper">
     <!--Welcome header and styling bar, minding semantics w/header-->
     <header>
-        <h1>Weather Dashboard</h1>
+      <h1>Weather Dashboard</h1>
     </header>
     <!--Creating a navigation with two separate containers. One for text area and submit button, another for cities that will populate as buttons below-->
     <section class="big-wrap">
-        <nav>
-            <form id="search">
-                <h2>Search for a City<span> :</span></h2>
-                <input id="search-box" type="text" placeholder="Type city here">
-                <button id="submit-button" type="submit">Submit</button>
-            </form>
+      <nav>
+        <form id="search">
+          <h2>Search for a City<span> :</span></h2>
+          <input id="search-box" type="text" placeholder="Type city here">
+          <button id="submit-button" type="submit">Submit</button>
+        </form>
 
-            <!--cities will populate in this section appearing as buttons-->
-            <section id="generated-cities">
-                
-            </section>
+        <!--cities will populate in this section appearing as buttons-->
+        <section id="generated-cities">
 
-            <!--This is a rectangle section which will display live weather criteria-->
-
-        </nav>
-
-        <section id="current-rapper">
-            <section id="current-weather">
-                <h2 class="emoji-container">Santa Cruz, CA.</h2>
-                <p>Temp:<span> 80 °</span></p>
-                <p>Wind༄ <span> 60 knots</span></p>
-                <p>Humidity:<span> 🕱</span></p>
-            </section>
-
-
-            <!--In this section, five boxes will populate showing a forcast for each day-->
-            <section id="five-day-forcast">
-                <h3>5-Day Forecast</h3>
-                <section id="display-boxes">
-                    <div class="future-cast">
-                        <h4>9/14/2022</h4>
-                        <div class="emoji-container"></div>
-                        <p>Temp:<span class="future-temp"> 80 °</span></p>
-                        <p>Wind༄<span class="future-wind"> 60 mph</span></p>
-                        <p>Humidity:<span class="future-humidity"> 🕱</span></p>
-                    </div>
-                    <div class="future-cast">
-                        <h4>9/15/2022</h4>
-                        <div class="emoji-container"></div>
-                        <p>Temp:<span class="future-temp"> 80 °</span></p>
-                        <p>Wind༄<span class="future-wind"> 60 knots</span></p>
-                        <p>Humidity:<span class="future-humidity"> 🕱</span></p>
-                    </div>
-                    <div class="future-cast">
-                        <h4>9/16/2022</h4>
-                        <div class="emoji-container"></div>
-                        <p>Temp:<span class="future-temp"> 80 °</span></p>
-                        <p>Wind༄<span class="future-wind"> 60 knots</span></p>
-                        <p>Humidity:<span class="future-humidity"> 🕱</span></p>
-                    </div>
-                    <div class="future-cast">
-                        <h4>9/17/2022</h4>
-                        <div class="emoji-container"></div>
-                        <p>Temp:<span class="future-temp"> 80 °</span></p>
-                        <p>Wind༄<span class="future-wind"> 60 knots</span></p>
-                        <p>Humidity:<span class="future-humidity"> 🕱</span></p>
-                    </div>
-                    <div class="future-cast">
-                        <h4>9/18/2022</h4>
-                        <div class="emoji-container"></div>
-                        <p>Temp:<span class="future-temp"> 80 °</span></p>
-                        <p>Wind༄<span class="future-wind"> 60 knots</span></p>
-                        <p>Humidity:<span class="future-humidity"> 🕱</span></p>
-                    </div>
-                </section>
-            </section>
         </section>
+
+        <!--This is a rectangle section which will display live weather criteria-->
+
+      </nav>
+
+      <section id="current-rapper">
+        <section id="current-weather">
+          <h2 class="emoji-container">Santa Cruz, CA.</h2>
+          <p>Temp:<span> 80 °</span></p>
+          <p>Wind༄ <span> 60 knots</span></p>
+          <p>Humidity:<span> 🕱</span></p>
+        </section>
+
+
+        <!--In this section, five boxes will populate showing a forcast for each day-->
+        <section id="five-day-forcast">
+          <h3>5-Day Forecast</h3>
+          <section id="display-boxes">
+            <div class="future-cast">
+              <h4>9/14/2022</h4>
+              <div class="emoji-container"></div>
+              <p>Temp:<span class="future-temp"> 80 °</span></p>
+              <p>Wind༄<span class="future-wind"> 60 mph</span></p>
+              <p>Humidity:<span class="future-humidity"> 🕱</span></p>
+            </div>
+            <div class="future-cast">
+              <h4>9/15/2022</h4>
+              <div class="emoji-container"></div>
+              <p>Temp:<span class="future-temp"> 80 °</span></p>
+              <p>Wind༄<span class="future-wind"> 60 knots</span></p>
+              <p>Humidity:<span class="future-humidity"> 🕱</span></p>
+            </div>
+            <div class="future-cast">
+              <h4>9/16/2022</h4>
+              <div class="emoji-container"></div>
+              <p>Temp:<span class="future-temp"> 80 °</span></p>
+              <p>Wind༄<span class="future-wind"> 60 knots</span></p>
+              <p>Humidity:<span class="future-humidity"> 🕱</span></p>
+            </div>
+            <div class="future-cast">
+              <h4>9/17/2022</h4>
+              <div class="emoji-container"></div>
+              <p>Temp:<span class="future-temp"> 80 °</span></p>
+              <p>Wind༄<span class="future-wind"> 60 knots</span></p>
+              <p>Humidity:<span class="future-humidity"> 🕱</span></p>
+            </div>
+            <div class="future-cast">
+              <h4>9/18/2022</h4>
+              <div class="emoji-container"></div>
+              <p>Temp:<span class="future-temp"> 80 °</span></p>
+              <p>Wind༄<span class="future-wind"> 60 knots</span></p>
+              <p>Humidity:<span class="future-humidity"> 🕱</span></p>
+            </div>
+          </section>
+        </section>
+      </section>
     </section>
-</section>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-    crossorigin="anonymous"></script>
-    <script src="./assets/script.js"></script>
+  </section>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+    integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U=" crossorigin="anonymous"></script>
+  <script src="./assets/script.js"></script>
 </body>
 
 </html>
