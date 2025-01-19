@@ -12,9 +12,7 @@
 
 setparate functions for current weather and five day forecst*/
 // My API key: 38438435bd1e08c9d78e0ac7cd864567
-var futureTemps = document.querySelectorAll(".future-temp");
-var futureWind = document.querySelectorAll(".future-wind");
-var futureHumidity = document.querySelectorAll(".future-humidity");
+
 
 function getWeather(lat, lon) {
     var weatherURL = 'https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&appid=38438435bd1e08c9d78e0ac7cd864567&units=imperial';
@@ -52,8 +50,16 @@ function getLatAndLon(cityName) {
 // 2) I want each date to show up below the five day forecast header in realtime when city is searched
 // 3) I want the weather criteria to show up in realtime below dates when city is searched
 
+// *I haven't written the ability to populate the 5-day forecast dates above the weather!
+
 /*creating function to grab five day forecast from an api URL
 returning digestible object information. */
+
+var daysDate = document.querySelectorAll(".days-date");
+var futureTemps = document.querySelectorAll(".future-temp");
+var futureWind = document.querySelectorAll(".future-wind");
+var futureHumidity = document.querySelectorAll(".future-humidity");
+
 function getFiveDayForecast(lat, lon) {
     var weatherURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=38438435bd1e08c9d78e0ac7cd864567&units=imperial`;
 
@@ -70,6 +76,11 @@ function getFiveDayForecast(lat, lon) {
                 day.dt_txt.includes('9:00:00');
             })*/
             console.log(days);
+
+            // the lines below will populate the 5day date (which are not functional yet 2/22/23)
+            for (var i = 0; i < daysDate.length; i++) {
+                daysDate[i].textContent = ` ${days[i].main.dt_txt}`;
+            }
 
             // the three lines below populate the 5day temps forecast
             for (var i = 0; i < futureTemps.length; i++) {
