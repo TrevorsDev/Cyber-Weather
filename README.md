@@ -1,4 +1,4 @@
-# Weather Waffles
+# Cyber Weather
 
 ## Description
 This app searches for and displays live and future weather data onto the screen with a visual "cyber-punk" theme.
@@ -13,7 +13,7 @@ This project helped me understand more deeply what JavaScript and APIs mean. It 
 
 ## Usage
 
-### Weather Waffles Website:
+### Cyber Weather Website:
 ![](assets/img/Weather_Waffles_Website.png)
 
 To use this website, the user will simply type a city into the search box located below the "Search for a City" header, and either click the "Submit" button or press the "Enter" key on their keyboard. After the first city is searched, the current weather will display directly below the "Weather Dashboard" header. A 5-Day Forecast will display just below that, and the searched cities will show up as responsive buttons below the "Submit" button, which will allow the user to re-search their previous cities.
