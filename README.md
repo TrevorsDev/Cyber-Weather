@@ -25,6 +25,6 @@ While creating this program, I tested my code very little. I spent most of this 
 This project wouldn't have been possible without the amazing help of Bobbi Turkany and many of the "Ask BCS" tutors that helped me further my understanding of the entire front-end web developempent, and JavaScript process.
 
 ## Deployed Links
-GitHub Weather Waffles Repo Link: https://github.com/TrevorsDev/weather-waffles
+GitHub Weather Waffles Repo Link: https://github.com/TrevorsDev/Cyber-Weather
 
 Deployed Link: https://trevorsdev.github.io/Cyber-Weather/
